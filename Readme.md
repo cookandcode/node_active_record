@@ -29,6 +29,7 @@ When you do this, you can now create your first model like this :
 		    table_name : 'users'
 		    class_name: Users
 		    id_is_uuid : true
+		    name_id: 'id'
 		    data : data
 		    in_association: in_association
 		    callback: callback
@@ -39,6 +40,7 @@ As you can see, the value which can change are
 - the "table_name" var which is the name of the table in your database
 - the "class_name" var which is the name of your class. (Be careful, don't use the quote)
 - the "id_is_uuid" var which indicate if the row id is define with the uuid function in mysql
+- the "name_id" var which indicate the name of the idenfifier of the table. This key is optional because by default the "name_id" is equal to "id"
 
 
 ### Create an instance of the users class

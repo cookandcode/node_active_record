@@ -598,7 +598,7 @@ ActiveRecord = (infos)->
         my_table_name: infos.table_name
         my_class_name: infos.class_name
         my_constraint: ''
-        name_id: if infos.name_id? && !infos.name_id then infos.name_id else 'id'
+        name_id: if infos.name_id? then infos.name_id else 'id'
         is_uuid: if (infos.id_is_uuid? && infos.id_is_uuid) then true else false
         callback_init: if infos.callback? then infos.callback else null
         data_init: if infos.data? then infos.data else null
