@@ -256,7 +256,20 @@ save_association = ()->
 
 
 
+# -----------------------------------------
+# -----------------------------------------
+# ------- FUNCTION FOR SAVE DATA ----------
+# -----------------------------------------
+# -----------------------------------------
+new_ = (data, callback)->
+  that = this
+  getRows(that,()->
+    inject_data(that, data)
+    if callback?
+      callback()
+  )
 
+  
 
 
 
@@ -374,11 +387,25 @@ where = (condition, array_, callback)->
 # - FUNCTION TO DELETE ONE ROW --
 # -----------------------------------------
 # -----------------------------------------
-delete_ = ()->
+delete_ = (callback)->
   that = this
-  request_delete = "DELETE * FROM #{that['config']['my_table_name']} WHERE #{that['config']['name_id']} = ?"
-  connection.query(request_delete, [this[that['config']['name_id']]], (err, result)->
-
+  request_delete = "DELETE FROM #{that['config']['my_table_name']} WHERE #{that['config']['name_id']} = ?"
+  connection.query(request_delete, [that[that['config']['name_id']]], (err, result)->
+    for k,v of my_rows_global[that['config']['my_table_name']]
+      delete that[v['Field']]
+    # DELETE RELATION
+    for k, value of that.config.belongs_to
+      name = if value.name_row? then value.name_row else value['model_string'].toLowerCase()
+      delete that[name]
+    for k,value of that.config.has_many
+      name = if value.name_row? then value.name_row else value['model_string'].toLowerCase()
+      delete that[name]
+    for k, value of that.config.has_one
+      name = if value.name_row? then value.name_row else value['model_string'].toLowerCase()
+      delete that[name]
+    
+    if callback?
+      callback()
   )
 
 
@@ -616,7 +643,9 @@ ActiveRecord = (infos)->
         true
       )
     else
-      getRows(that)
+      getRows(that,()->
+        that['config']['callback_init']() if that['config']['callback_init'] != null
+      )
 
 
 
@@ -636,7 +665,6 @@ ActiveRecord = (infos)->
 
 
   init(this, infos)
-  
 
   @save = save
   @find = find
@@ -644,7 +672,8 @@ ActiveRecord = (infos)->
   @where = where
   @delete = delete_
   @getTableName = getTableName
-  
+  @create = new_
+
   @
 
 
