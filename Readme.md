@@ -12,6 +12,13 @@ When you put it in the right folder, don't forget to go to this folder and launc
 (In the following days, I will put it on NPM)
 
 
+## Init the database configuration
+
+(Before started, you must that ActiveRecord is only compatible with MySQL.)
+To do that, you just change the the "database.json" file.
+
+
+
 ## How it works ?
 
 At first, you need to create a model file which will contain all your model !
