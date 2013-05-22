@@ -1,4 +1,4 @@
-Active Record Class for NodeJS
+Active Record Class for NodeJS 
 ===============
 
 
@@ -76,7 +76,7 @@ The callback doesn't take argument because the data are injected in the object w
 #### Where function (asynchronous)
 The "where" function permit you to retrieve data like a where clause :
 ```javascript
-	user.where("id = ? AND name = ?, [1, '%John%'] function(users){
+	user.where("id = ? AND name = ?", [1, '%John%'] function(users){
 		console.log(users)
 		users[0].name = "Test"
 		users[0].save()
