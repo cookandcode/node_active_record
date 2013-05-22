@@ -1,0 +1,1 @@
+Active Record Class for NodeJS (readme being drafted)
