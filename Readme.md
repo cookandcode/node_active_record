@@ -1,4 +1,4 @@
-Active Record Class for NodeJS 
+Active Record Class for NodeJS (The Readme is being drafted)
 ===============
 
 
@@ -86,7 +86,7 @@ Contrary to the 'find' method, the callback take an argument which correspond to
 
 
 #### all function (asynchronous)
-The "where" function permit you to retrieve all the data in the table in relation with the object :
+The "all" function permit you to retrieve all the data in the table in relation with the object :
 ```javascript
 	user.all(function(users){
 		console.log(users)
@@ -187,6 +187,8 @@ An example is better than words :
 		# This command will save only the "crazy_people" with the index 0
 	})
 ```
+
+
 
 
 	
