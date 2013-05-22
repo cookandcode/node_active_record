@@ -1,0 +1,16 @@
+{
+    "name": "ActiveRecord",
+    "version": "0.1.0",
+    "dependencies": {
+        "mysql": "~2.0.0",
+        "node-uuid": "*",
+        "mocha":"*",
+        "should": "*"
+    },
+    "main": "./index",
+    "bin":{
+    },
+    "engines":{
+      "node":"*"
+    }
+}
