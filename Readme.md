@@ -191,6 +191,12 @@ An example is better than words :
 ```
 
 
+The end word
+===============
+
+This class works but I'm not guarantee is stability because it's the first version but I will be happy to have returned to improve this class.
+
+
 
 
 	
