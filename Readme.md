@@ -192,11 +192,11 @@ An example is better than words :
 	user.find(1, function(){
 		user.crazy_entreprise.name = 'test name entreprise'
 		user.crazy_entreprise.save()
-		# This command will save only the "crazy_entreprise"
+		// This command will save only the "crazy_entreprise"
 
 		user.crazy_entreprise.crazy_people[0].first_name = 'my first name'
 		user.crazy_entreprise.crazy_people[0].save()
-		# This command will save only the "crazy_people" with the index 0
+		// This command will save only the "crazy_people" with the index 0
 	})
 ```
 
