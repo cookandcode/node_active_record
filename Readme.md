@@ -169,16 +169,18 @@ More details about these keys :
 	- Here the name of the key is "id_entreprise" and is found in the "users" table.
 - "name_row" key is taken as the name of the key which permits you to query the association in the object. By default it's the "model_string" value which is considered
 
+The "in_assocation" key is mandatory because it used for the relation between the models. It permit to avoid infinity loop between the models
+
 An example is better than words :
 
 ```javascript
-	user = new Users()
+	var user = new Users()
 	user.find(1, function(){
 		console.log(user.crazy_entreprise.name)
-		# Return the name of the entreprise which the user belongs to
+		// Return the name of the entreprise which the user belongs to
 		
 		console.log(user.crazy_entreprise.crazy_people)
-		# Return an array which contain all the users who belongs to this entreprise
+		// Return an array which contain all the users who belongs to this entreprise
 	})
 ```
 
