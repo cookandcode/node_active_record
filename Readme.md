@@ -169,7 +169,7 @@ More details about these keys :
 	- Here the name of the key is "id_entreprise" and is found in the "users" table.
 - "name_row" key is taken as the name of the key which permits you to query the association in the object. By default it's the "model_string" value which is considered
 
-The "in_assocation" key is mandatory because it used for the relation between the models. It permit to avoid infinity loop between the models
+(The "in_assocation" key is mandatory because it used for the relation between the models. It permit to avoid infinity loop between the models).
 
 An example is better than words :
 
